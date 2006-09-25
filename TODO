@@ -1,0 +1,17 @@
+* String values beginning or ending with spaces, or
+  containing commas or semicolons, must be enclosed in quotes.  DONE 
+
+* Unrecognized keys should be skipped. DONE
+
+* Quote and backslash ("\", decimal code 92) characters
+
+* Binary characters (decimal ranges 0..31, 127..159) appearing inside strings 
+  must be encoded using the escape sequences described in this document.
+
+* Escape characters (see page 7 or 12)
+
+* Continuation characters
+
+*  When a parser encounters an unrecognized section name, the entire
+   section (with all its keys) should be skipped. 
+

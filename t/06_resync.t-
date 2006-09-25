@@ -1,0 +1,19 @@
+use Test::More qw(no_plan);
+use Config::Format::Ini;
+use File::Slurp qw(slurp);
+
+my $dir  = $ENV{PWD} =~ m#\/t$#  ? './data' : 't/data';
+
+my $b0 = { 
+	person  => { name    => [ 'The King'       ],
+                     lyrics  => [ 'Cruel'          ],
+                   }
+};
+
+my $res;
+$res =  read_ini <$dir/resync2>;
+is_deeply( $res, $b0 )  ;
+$res =  read_ini <$dir/resync1>;
+is_deeply( $res, $b0 )  ;
+
+

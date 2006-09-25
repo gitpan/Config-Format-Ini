@@ -1,0 +1,6 @@
+Revision history for Perl extension Config::Format::Ini.
+
+0.01  Sun Sep 24 18:03:39 2006
+	- original version; created by h2xs 1.23 with options
+		-AX -n Config::Format::Ini
+
