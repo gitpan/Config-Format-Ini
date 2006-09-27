@@ -1,6 +1,6 @@
 ---
 name: Config-Format-Ini
-version: 0.01
+version: 0.02
 author:
   - 'Ioannis Tambouras <ioannis@cpan.org>'
 abstract: Reads INI configuration files
@@ -18,7 +18,7 @@ recommends:
 provides:
   Config::Format::Ini:
     file: lib/Config/Format/Ini.pm
-    version: 0.01
+    version: 0.02
   Config::Format::Ini::Grammar:
     file: lib/Config/Format/Ini/Grammar.pm
 generated_by: Module::Build version 0.2611
