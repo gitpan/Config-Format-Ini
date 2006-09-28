@@ -5,9 +5,17 @@ use strict;
 my $gram = <<'END_GRAMMAR' ;
 {       my $h ;
 	use Data::Dumper;
+	my %esc =  map {$_ => pack 'H2', $_}  0..255;
+	@esc{ '\n', '\t', '\r', '\a' } = ( "\n", "\t", "\r", "\a" );
 	sub merge2hash { my $aref = shift; my $h;
 	   ref eq 'HASH' and @{$h}{keys %$_} = values %$_  for @$aref; $h;
 	}
+        sub  postprocess {
+		local $_ = shift ||return;
+		s/ \\x([\d]{1,3})/ $esc{ "$1"+0 } /egx;
+		s/ (\\[ntra])    / $esc{$1}       /xge;
+	        $_ ;
+        }
 }
 	         
 
@@ -36,7 +44,8 @@ my $gram = <<'END_GRAMMAR' ;
                <reject: ${item[1]}[1] ne '"' >
                { $item[1]->[2] }
     VAL:       /[^,;#\n]+/   
-               { $item[1] =~ s/\s+$// ; $item[1] }
+               { $item[1] =~ s/\s+$// }
+               { postprocess( $item[1] ) }
     VAL:       ',' VAL 
                {$item[2]} 
  

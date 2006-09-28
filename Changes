@@ -1,4 +1,7 @@
 Revision history for Perl extension Config::Format::Ini.
+0.03  Thu Sep 28 03:21:24 2006
+	- values can contain \x000 and ansi escapes
+	- Added tests for escaped hexdigits and ansi chars
 
 0.02  Tue Sep 26 06:03:39 2006
 	- Unrecognized keys are skipped
