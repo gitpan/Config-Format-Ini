@@ -42,10 +42,14 @@ my $gram = <<'END_GRAMMAR' ;
 
     VAL:       <perl_quotelike>
                <reject: ${item[1]}[1] ne '"' >
+               { $item[1]->[2] =~ s/\\\n//g }
                { $item[1]->[2] }
-    VAL:       /[^,;#\n]+/   
-               { $item[1] =~ s/\s+$// }
-               { postprocess( $item[1] ) }
+    VAL:      
+                /.*? (?<!\\)(?=[,;#\n]) /sx 
+                { $item[1] =~ s/\\\n//g     }
+		{ $item[1] =~ s/[;#].*\Z//m }
+		{ $item[1] =~ s/^\s+|\s+$// }
+                { postprocess( $item[1] ) }
     VAL:       ',' VAL 
                {$item[2]} 
  

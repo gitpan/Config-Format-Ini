@@ -1,4 +1,9 @@
 Revision history for Perl extension Config::Format::Ini.
+
+0.04  Sun Oct  1 01:54:02 2006
+	- values can occupy multiple lines if continued with \<newline>
+	- Added tests for this continuation charter:  '\', followed by "\n" .
+
 0.03  Thu Sep 28 03:21:24 2006
 	- values can contain \x000 and ansi escapes
 	- Added tests for escaped hexdigits and ansi chars

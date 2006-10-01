@@ -15,12 +15,17 @@ t/04_values.t
 t/05_comments.t
 t/06_resync.t
 t/07_escapes.t
+t/08_continuation.t
 t/data/basic1
 t/data/comments1
 t/data/comments2
+t/data/contin1
+t/data/contin2
+t/data/contin3
 t/data/count1
 t/data/count2
 t/data/escape0
+t/data/escape1
 t/data/quote1
 t/data/r0
 t/data/r1
