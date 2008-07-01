@@ -1,24 +1,16 @@
----
-name: Config-Format-Ini
-version: 0.04
-author:
-  - 'Ioannis Tambouras <ioannis@cpan.org>'
-abstract: Reads INI configuration files
-license: perl
-requires:
-  Attribute::Handlers: 0
-  File::Slurp: 0
-  Parse::RecDescent: 0
-  perl: 5.6
-recommends:
-  Test::Exception: 0
-  Test::More: 0
-  Test::Pod: 0
-  Test::Pod::Coverage: 1.0
-provides:
-  Config::Format::Ini:
-    file: lib/Config/Format/Ini.pm
-    version: 0.04
-  Config::Format::Ini::Grammar:
-    file: lib/Config/Format/Ini/Grammar.pm
-generated_by: Module::Build version 0.2611
+--- #YAML:1.0
+name:                Config-Format-Ini
+version:             0.05
+abstract:            Reads INI configuration files
+license:             ~
+author:              
+    - Ioannis Tambouras <ioannis@cpan.org>
+generated_by:        ExtUtils::MakeMaker version 6.42
+distribution_type:   module
+requires:     
+    Attribute::Handlers:           0
+    File::Slurp:                   0
+    Parse::RecDescent:             0
+meta-spec:
+    url:     http://module-build.sourceforge.net/META-spec-v1.3.html
+    version: 1.3

@@ -1,5 +1,13 @@
 Revision history for Perl extension Config::Format::Ini.
 
+0.05  Tue Jul  1 12:20:44 2008
+	- added global $Config::Format::Init::SIMPLIFY
+          When enabled (disabled by default), single-element-lists
+	  are converted to simple string; that is,
+          the array_ref [ 'john'] is converted to string 'john';
+          In addition, if the list (or section) has is blank, it
+          results to a simple undef (instead [] in previous versions).
+
 0.04  Sun Oct  1 01:54:02 2006
 	- values can occupy multiple lines if continued with \<newline>
 	- Added tests for this continuation charter:  '\', followed by "\n" .

@@ -16,7 +16,9 @@ t/05_comments.t
 t/06_resync.t
 t/07_escapes.t
 t/08_continuation.t
+t/09_simplify.t
 t/data/basic1
+t/data/basic2
 t/data/comments1
 t/data/comments2
 t/data/contin1
@@ -43,4 +45,5 @@ t/data/tiny1
 t/data/tiny2
 t/data/val1
 t/data/val2
+t/makefile
 TODO

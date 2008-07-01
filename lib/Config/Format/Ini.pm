@@ -8,18 +8,42 @@ use base qw( Exporter );
 our @EXPORT = qw( read_ini  );
 our %EXPORT_TAGS = ( 'all' => [ qw( ) ] );
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 use Config::Format::Ini::Grammar;
 use File::Slurp qw(slurp);
+
+our $SIMPLIFY=0;
 
 sub read_ini {
 	return unless @_;
 	my $msg;
         $msg  .= scalar slurp $_  for @_ ;
 	my $p  = new Config::Format::Ini::Grammar;
-	$p->startrule( $msg );
+	my $result = $p->startrule( $msg );
+	_simplify( $result)  if $SIMPLIFY;
+	$result;
 }
+
+sub _arr2scalar {
+        # change arrays with one element to string
+        my $ref = shift ||return;
+        return unless ref $ref eq 'HASH';
+        while (my( $k,$v )=each %$ref) {
+                next unless ref $v eq 'ARRAY';
+                (1 == @$v ) and $ref->{$k} = $v->[0];
+                (0 == @$v ) and $ref->{$k} = undef;
+        }
+}
+sub _simplify {
+        my $ini =shift;
+        return unless ref $ini eq 'HASH';
+        (0 == keys %{$ini->{$_}})
+                ? undef $ini->{$_}
+                : _arr2scalar  $ini->{$_}
+                for (keys %$ini);
+}
+
 
 1;
 __END__
