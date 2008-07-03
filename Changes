@@ -1,6 +1,9 @@
 Revision history for Perl extension Config::Format::Ini.
 
 0.05  Tue Jul  1 12:20:44 2008
+	- Fixt Perl dependacy to 5.008
+
+0.05  Tue Jul  1 12:20:44 2008
 	- added global $Config::Format::Init::SIMPLIFY
           When enabled (disabled by default), single-element-lists
 	  are converted to simple string; that is,

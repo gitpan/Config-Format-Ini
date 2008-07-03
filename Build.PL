@@ -3,7 +3,7 @@ my $b= Module::Build->new(
         module_name        => 'Config::Format::Ini',
         dist_version_from  => 'lib/Config/Format/Ini.pm',
         dist_author        => 'Ioannis Tambouras <ioannis@cpan.org>',
-        requires           => {  perl                => '5.6',
+        requires           => {  perl                => '5.008008',
                                 'Attribute::Handlers'=>  0 ,
                                 'Parse::RecDescent'  =>  0 ,
                                 'File::Slurp'        =>  0 ,

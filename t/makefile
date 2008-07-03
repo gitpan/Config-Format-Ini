@@ -23,7 +23,7 @@ ls:
 
 vi: w
 	vim ../blib/lib/Config/Format/Ini.pm
-gvi:
+vig:
 	vim ../blib/lib/Config/Format/Ini/Grammar.pm
 cp:
 	cp ../blib/lib/Config/Format/Ini.pm        ../lib/Config/Format
