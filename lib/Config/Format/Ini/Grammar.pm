@@ -1,6 +1,7 @@
 package  Config::Format::Ini::Grammar;
 use Parse::RecDescent;
 use strict;
+use warnings;
 
 my $gram = <<'END_GRAMMAR' ;
 {       my $h ;

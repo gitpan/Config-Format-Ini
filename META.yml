@@ -1,8 +1,8 @@
 --- #YAML:1.0
 name:                Config-Format-Ini
-version:             0.06
+version:             0.07
 abstract:            Reads INI configuration files
-license:             ~
+license:             perl
 author:              
     - Ioannis Tambouras <ioannis@cpan.org>
 generated_by:        ExtUtils::MakeMaker version 6.42

@@ -8,7 +8,7 @@ use base qw( Exporter );
 our @EXPORT = qw( read_ini  );
 our %EXPORT_TAGS = ( 'all' => [ qw( ) ] );
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 use Config::Format::Ini::Grammar;
 use File::Slurp qw(slurp);

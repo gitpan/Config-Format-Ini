@@ -1,5 +1,6 @@
 Build.PL
 Changes
+Debian_CPANTS.txt
 lib/Config/Format/Ini.pm
 lib/Config/Format/Ini/Grammar.pm
 Makefile.PL

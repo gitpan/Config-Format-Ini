@@ -2,6 +2,7 @@ use 5.008008;
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
+    LICENSE           => 'perl',
     PL_FILES          => {},
     NAME              => 'Config::Format::Ini',
     VERSION_FROM      => 'lib/Config/Format/Ini.pm',
