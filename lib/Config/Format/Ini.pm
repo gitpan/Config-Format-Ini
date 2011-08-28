@@ -1,6 +1,6 @@
 package Config::Format::Ini;
 
-use 5.008008;
+use 5.008000;
 use strict;
 use warnings;
 
@@ -8,7 +8,7 @@ use base qw( Exporter );
 our @EXPORT = qw( read_ini  );
 our %EXPORT_TAGS = ( 'all' => [ qw( ) ] );
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 use Config::Format::Ini::Grammar;
 use File::Slurp qw(slurp);
@@ -61,7 +61,7 @@ Config::Format::Ini - Reads INI configuration files
 This module reads INI files by following the spec
 presently found at http://www.cloanto.com/specs/ini.html .
 It supports most of the spec, including multi-valued keys (separated by
-commas), double-quoted values, and free comments, and overide of earlier
+commas), double-quoted values, and free comments, and override of earlier
 sections and keys.
 
 Escape and continuation strings are in the TODO list.

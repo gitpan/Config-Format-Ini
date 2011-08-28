@@ -7,9 +7,11 @@
 
 OPTS = -Mstrict -MData::Dumper -Mblib=../blib 
 
+current = 01s_spelling.t
+
 #all: 08_continuation.t
-all: 09_simplify.t
-#all: 01c_coverage.t
+#all: 09_simplify.t
+all: $(current)
 
 P* 0*:
 	@perl -lw  $(OPTS) $@
@@ -22,7 +24,7 @@ ls:
 	ls -l ../blib/lib/Config
 
 vi: w
-	vim ../blib/lib/Config/Format/Ini.pm
+	vim -p $(current) ../blib/lib/Config/Format/Ini.pm
 vig:
 	vim ../blib/lib/Config/Format/Ini/Grammar.pm
 cp:
@@ -30,3 +32,7 @@ cp:
 	cp ../blib/lib/Config/Format/Ini/*         ../lib/Config/Format/Ini
 precompile:
 	 perl -MParse::RecDescent - grammar  Config::Format::Init::Gram
+test:
+	make -sC .. test
+help:
+	echo precompile pod test

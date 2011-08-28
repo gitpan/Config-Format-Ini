@@ -1,5 +1,8 @@
 Revision history for Perl extension Config::Format::Ini.
 
+0.08  Sat Aug 28 06:06:16 2011
+       - Regular upkeep: changed installer, changed and added tests
+
 0.07  Wed Jul 23 21:48:23 2008
         - Fixed license entry (to perl)
 

@@ -2,6 +2,8 @@ package  Config::Format::Ini::Grammar;
 use Parse::RecDescent;
 use strict;
 use warnings;
+#use 5.008000;
+our $VERSION='0.01';
 
 my $gram = <<'END_GRAMMAR' ;
 {       my $h ;

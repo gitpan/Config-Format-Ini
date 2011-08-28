@@ -1,21 +1,26 @@
 Build.PL
 Changes
-Debian_CPANTS.txt
 lib/Config/Format/Ini.pm
 lib/Config/Format/Ini/Grammar.pm
 Makefile.PL
-MANIFEST
+MANIFEST			This list of files
+MANIFEST.SKIP
 META.yml
 README
 t/00_load.t
 t/01b_pod.t
 t/01c_coverage.t
+t/01s_spelling.t
 t/02_basic.t
+t/02_hasversion.t
 t/03_grammar.t
+t/03_meta.t
 t/04_values.t
 t/05_comments.t
+t/05_minimumversion.t
 t/06_resync.t
 t/07_escapes.t
+t/07_strict.t
 t/08_continuation.t
 t/09_simplify.t
 t/data/basic1
@@ -47,4 +52,3 @@ t/data/tiny2
 t/data/val1
 t/data/val2
 t/makefile
-TODO

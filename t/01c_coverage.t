@@ -1,14 +1,14 @@
 use Test::More;
 
-eval "use Test::Pod::Coverage 1.00";
-plan skip_all => "Test::Pod::Coverage 1.00 required for POD coverage" if $@;
-plan qw(no_plan);
+my $dir  = $ENV{PWD} =~ m#\/t$#  ? '../' : '';
+my $trustme = { trustme => [ 	  qr/^/  
+                                , ], };
 
+eval 'use Test::Pod::Coverage' ;
 
-my $trustme = { also_private => [ qr/^/ ] };
-
-pod_coverage_ok( $_, $trustme ) for (
-				'Config::Format::Ini',
-				'Config::Format::Ini::Grammar',
-				);
-
+SKIP: {        
+        skip  'no Test::Pod::Coverage', scalar 1    if $@ ;
+		my @modules = all_modules( "${dir}blib"  );
+		pod_coverage_ok( $_, $trustme )  for  @modules;
+		done_testing( scalar @modules );
+};
